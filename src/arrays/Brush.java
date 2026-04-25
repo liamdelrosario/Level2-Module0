@@ -9,7 +9,8 @@ public class Brush {
     int x, y;
     int brushSize, maxBrushThickness, numberOfBristles, brushStagger;
     Bristle[] bristles;
-
+    public static void main(String[] args) {
+	}
     public Brush(PApplet processing) {
         this.processing = processing;
         this.paintingIndex = 0;
