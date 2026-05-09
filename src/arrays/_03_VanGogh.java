@@ -56,8 +56,11 @@ public class _03_VanGogh extends PApplet {
      */
     Brush brush;
     PImage[] image = new PImage[initializePaintings()];
+    int numOfPimage;
+    
     int initializePaintings() {
-    int idk =4;
+    int idk =3;
+  //  image[0];
 	return idk;    
     }
     
@@ -77,10 +80,17 @@ public class _03_VanGogh extends PApplet {
         surface.setResizable(true);
         
         canvas = loadImage("canvas.jpg");
-        
+        brush.setNewPainting(image[numOfPimage]);
         brush = new Brush(this);
+        
+        image[0] = loadImage("starryNight.jpg");
+        image[1] = loadImage("strawHatPortrait.jpg");
+        image[2] = loadImage("strawHatPortrait.jpg");
+        image[3] = loadImage("painterOnRoad.jpg");
+
  //       "starryNight.jpg", "strawHatPortrait.jpg",
- //      *    "wheatField.jpg", "painterOnRoad.jpg"
+ //      *    "strawHatPortrait.jpg", "painterOnRoad.jpg"
+        
         paintbrushCursor = loadImage("paintbrushCur.png");
         paintbrushCursor.resize(22 * 2, 28 * 2);
         cursor(paintbrushCursor);
