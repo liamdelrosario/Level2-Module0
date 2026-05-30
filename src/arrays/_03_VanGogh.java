@@ -60,9 +60,19 @@ public class _03_VanGogh extends PApplet {
     int arrayIndex ;
     
     void initializePaintings() {
-    PImage[] painting = new PImage[4];
-    arrayIndex = 0;
+    image = new PImage[4];
+    arrayIndex =1;
   //  image[0];   
+    	if(arrayIndex>3) {
+    		arrayIndex=0;
+    	}
+    	image[0] = loadImage("starryNight.jpg");
+        image[1] = loadImage("strawHatPortrait.jpg");
+        image[2] = loadImage("strawHatPortrait.jpg");
+        image[3] = loadImage("painterOnRoad.jpg");
+      
+
+        brush.setNewPainting(image[3]);
 	;
     }
     
@@ -82,13 +92,10 @@ public class _03_VanGogh extends PApplet {
         surface.setResizable(true);
         
         canvas = loadImage("canvas.jpg");
-        brush.setNewPainting(image[numOfPimage]);
+       
         brush = new Brush(this);
         
-        image[0] = loadImage("starryNight.jpg");
-        image[1] = loadImage("strawHatPortrait.jpg");
-        image[2] = loadImage("strawHatPortrait.jpg");
-        image[3] = loadImage("painterOnRoad.jpg");
+      
 
  //       "starryNight.jpg", "strawHatPortrait.jpg",
  //      *    "strawHatPortrait.jpg", "painterOnRoad.jpg"
@@ -119,8 +126,9 @@ public class _03_VanGogh extends PApplet {
                 image(canvas, 0, 0);
             } else if (key == 32) {
                 // SPACE key pressed--go to next painting
-                selectNextPainting();
-
+            	if (key == 'd') {
+            	selectNextPainting();
+            	}
                 //canvas.resize(width, height);
                 initializeCanvas = true;
             }
